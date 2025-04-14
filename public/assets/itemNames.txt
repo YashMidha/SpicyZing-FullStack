@@ -1,0 +1,17 @@
+1 - Pizza
+2 - Paneer Roll
+3 - Chicken Roll
+4 - Chocolate Icecream
+5 - Strawberry Icecream
+6 - Vanilla Icecream
+7 - Chicken Sandwich
+8 - Veg Sandwich
+9 - Grilled Sandwich
+10 - Cup Cake
+11 - Red Velvet Cake
+12 - Vanilla Cake
+13 - Butter Coach Cake
+14 - Redsauce Pasta
+15 - Whitesauce Pasta
+16 - Veg Noodles
+17 - Chicken Noodles

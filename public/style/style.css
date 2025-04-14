@@ -1,0 +1,92 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-color: #E8F0FE; */
+    background-color: #ffc00227;
+}
+
+/* Index:- */
+
+h1{
+    font-size: 60px;
+}
+
+a{
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.content{
+    margin: 55px;
+    margin-top: 190px;
+    font-size: 30px;
+}
+
+.right-left{
+    display: flex;
+    align-items: center;
+    margin: 70px 0px;
+}
+
+.right-left img, .right-left p{
+    margin: 20px;
+}
+
+.index-options{
+    display: flex;
+    justify-content: center;
+}
+
+.button-look-alike{
+    width: 150px;
+    text-align: center;
+    margin: 40px;
+    cursor: pointer;
+    padding: 20px;
+    font-weight: bold;
+    box-shadow: 0px 0px 10px #0000006c;
+}
+
+.button-look-alike a{
+    text-decoration: none;
+    color: white;
+}
+
+#menu-button{
+    background-color: orange;
+}
+
+#login-button{
+    background-color: green;
+}
+
+#never-hidden{
+    display: block;
+}
+
+#always-hidden{
+    display: none;
+}
+
+#top-margin-high{  
+    margin-top: 190px;
+}
+
+#no-top-margin{
+    margin-top: 0px;
+}
+
+#high-bottom-margin{
+    margin-bottom: 100px;
+}
+
+/* Following is controlled by js */
+
+.hide-element{
+    display: none;
+}

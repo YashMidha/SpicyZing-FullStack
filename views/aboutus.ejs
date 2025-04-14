@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpicyZing</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/headerStyle.css">
+    <link rel="stylesheet" href="../style/footerStyle.css">
+    <link rel="stylesheet" href="../style/aboutusStyle.css">
+</head>
+<body>
+    
+    <div class="header">
+        <a href="/">
+            <img src="assets/logo.png" width="200" id="logo">
+        </a>
+        <div class="navbar">
+            <a href="/">Home</a>
+            <a href="/aboutus" id="active-page">About us</a>
+            <a href="/contactus">Contact us</a>
+            <a href="/menu">Delivery</a>
+            <a href="/reservation">Reservation</a>
+        </div>
+        <div class="sign-up-options">
+            <% if (!isAuthenticated){ %>
+                <a class="login-button" href="/login">Log in</a>
+            <% } %>
+            <% if (isAuthenticated && user) { %>
+                <a href="/profile">
+                    <div class="user-circle">
+                        <%= user.name.charAt(0).toUpperCase() %>
+                    </div>
+                </a>
+            <% } else { %>
+                <div class="signup-button">
+                    <a href="/signup">Sign up</a>
+                </div>
+            <% } %>            
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>Our Mission</h2>
+        <div class="paragraph">
+            <p>At SpicyZing, we are passionate about delivering exceptional dining experiences that delight our guests. With a commitment to quality ingredients, innovative culinary techniques, and personalized service, we strive to create memorable moments for every patron who walks through our doors. Our team of dedicated chefs and staff work tirelessly to craft flavorful dishes that celebrate both traditional flavors and modern gastronomy. Whether you're joining us for a casual lunch, a romantic dinner, or a special celebration, we aim to exceed your expectations at every turn. Welcome to SpicyZing, where culinary excellence meets warm hospitality.</p>
+        </div>
+        <div class="test">
+            <h2>Our Services</h2>
+            <div class="services">
+                <div class="service">
+                    <img src="assets/reserve_img.png" width="150">
+                    <h3>Reservation</h3>
+                    <p>Secure your spot at our restaurant hassle-free with our convenient reservation service</p>
+                    <a href="/reservation" class="explore-more">
+                        <p>Explore More</p>
+                    </a>
+                </div>
+                <div class="service">
+                    <img src="assets/delivery_img.png" width="150">
+                    <h3>Delivery</h3>
+                    <p>Enjoy the flavors of SpicyZing from the comfort of your own home with our convenient online delivery service</p>
+                    <a href="/menu" class="explore-more">
+                        <p>Explore More</p>
+                    </a>
+                </div>
+                <div class="service">
+                    <img src="assets/feedback_img.png" width="150">
+                    <h3>Feedback</h3>
+                    <p>Your feedback matters to us! Share your dining experience and help us serve you better with our easy-to-use feedback service</p>
+                    <a href="/contactus" class="explore-more">
+                        <p>Explore More</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-items">
+            <div class="footer-item">
+                <h3>SpicyZing</h3>
+                <p>We are committed to providing a fully accessible dining experience for all guests. If you have any questions or need assistance, please contact us.</p>
+            </div>
+            <div class="footer-item">
+                <h3>Follow us on</h3>
+                <ul>
+                    <li><a href="https://www.instagram.com/">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/">Facebook</a></li>
+                    <li><a href="https://twitter.com/home">Twitter</a></li>
+                    <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="footer-item">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/aboutus">About us</a></li>
+                    <li><a href="/contactus">Contact us</a></li>
+                    <li><a href="/menu">Delivery</a></li>
+                    <li><a href="/reservation">Reservation</a></li>
+                    <li><a href="/login">Log in</a></li>
+                    <li><a href="/signup">Sign up</a></li>
+                </ul>
+            </div>
+        </div>
+        <p id="copy-right">© 2024 SpicyZing. All rights reserved.</p>
+    </div>
+
+</body>
+</html>

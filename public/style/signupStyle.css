@@ -1,0 +1,84 @@
+.holder{
+    display: flex;
+    justify-content: center;
+}
+
+.login-form{
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 0px 10px #0000006c;
+    border-radius: 20px;
+    flex-direction: column;
+    background-color: white;
+}
+
+h2{
+    margin: 40px;
+}
+
+.login-form input{
+    margin: 10px;
+}
+
+input, .button-to-signup{
+    width: 300px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.button-to-signup{
+    background-color: green;
+    color: white;
+    border: 1px solid green;
+    box-shadow: 0px 0px 10px #00000019;
+    margin-top: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button-to-signup:hover{
+    text-decoration: none;
+}
+
+.link-to-login{
+    margin: 30px;
+}
+
+.link-to-login:hover{
+    text-decoration: underline;
+}
+
+.same-line{
+    margin: 10px;
+}
+
+.radio-input, .check-input{ 
+    width: auto;
+}
+
+#date-label{
+    margin-top: 20px;
+    text-align: left;
+}
+
+#radio-same-line{
+    display: flex;
+}
+
+#check-same-line{
+    margin-top: 30px;
+}
+
+.space-between{
+    margin: 0px 20px;
+}
+
+.red-incorrect{
+    font-size: 20px;
+    color: red;
+    display: none;
+    align-items: center;
+    margin-top: 30px;
+}
+

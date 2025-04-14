@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpicyZing</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/headerStyle.css">
+    <link rel="stylesheet" href="../style/menuStyle.css">
+    <link rel="stylesheet" href="../style/cartStyle.css">
+    <link rel="stylesheet" href="../style/footerStyle.css">
+</head>
+<body>
+    <div class="header">
+        <a href="/">
+            <img src="assets/logo.png" width="200" id="logo">
+        </a>
+        <div class="navbar">
+            <a href="/">Home</a>
+            <a href="/aboutus">About us</a>
+            <a href="/contactus">Contact us</a>
+            <a href="/menu" id="active-page">Delivery</a>
+            <a href="/reservation">Reservation</a>
+        </div>
+        <div class="menu-options">
+            <input type="text" placeholder="Search" id="search-item">
+            <img src="assets/search_img.png" width="26" onclick="search()">
+            <img src="assets/cart_img.png" width="30" onclick="toggleCart()">
+            <div class="number-of-items hide-element"></div>
+            <a href="/profile" style="margin-left:15px">
+                <div class="user-circle">
+                    <%= user.name.charAt(0).toUpperCase() %>
+                </div>
+            </a>
+        </div>
+    </div>
+    <h3 class="information">Discover our vibrant dishes bursting with zest and flavor</h3>
+    
+    <div class="filters">
+        <div class="filter" id="veg-filter" onclick="Filter(this)">
+            <img src="assets/veg_img.png" width="25">
+            <p>Veg</p>
+            <img class="tick" src="assets/bluetick_img.png" width="25">
+            <p class="id-invisible">0</p>
+        </div>
+        <div class="filter" id="nonveg-filter" onclick="Filter(this)">
+            <img src="assets/nonveg_img.png" width="25">
+            <p>Non Veg</p>
+            <img class="tick" src="assets/bluetick_img.png" width="25">
+            <p class="id-invisible">1</p>
+        </div>
+        <div class="filter" id="main-filter" onclick="Filter(this)">
+            <img src="assets/maincourse_img.png" width="25">
+            <p>Main Course</p>
+            <img class="tick" src="assets/bluetick_img.png" width="25">
+            <p class="id-invisible">2</p>
+        </div>
+        <div class="filter" id="dessert-filter" onclick="Filter(this)">
+            <img src="assets/dessert_img.png" width="25">
+            <p>Dessert</p>
+            <img class="tick" src="assets/bluetick_img.png" width="25">
+            <p class="id-invisible">3</p>
+        </div>
+        <div class="filter" id="reset" onclick="Filter(this)">
+            <img src="assets/reset_img.png" width="25">
+            <p>Reset</p>
+            <img class="tick" src="assets/bluetick_img.png" width="25">
+            <p class="id-invisible">4</p>
+        </div>
+    </div>
+
+    <div class="container" id="target">
+        <!-- Populated by JS -->
+    </div>
+
+    <p id="no-searches-matching">
+        <!-- Used if no searches found -->
+    </p>
+
+    <img src="assets/close_img.png" width="40" id="close" onclick="toggleCart()">
+    <div class="cart" id="top-margin-high">
+        <h2 id="your-items" class="cart-text hide-element">Your Items</h2>
+        
+        <div class="cart-container">
+            <!-- Populated by JS-->
+        </div>
+        
+        <div class="cart-empty hide-element">
+            <p>Cart is Empty!</p>
+        </div>
+        <h3 id="cart-total-items" class="extra-top-margin cart-bottom-text cart-text hide-element">Total Items: 0</h3>
+        <h3 id="grand-total" class="cart-bottom-text cart-text hide-element">Grand Total: ₹0</h3>
+        <a href="/" class="order-food cart-text hide-element">
+            <p>Order</p>
+        </a>
+    </div>
+
+    <div class="footer">
+        <div class="footer-items">
+            <div class="footer-item">
+                <h3>SpicyZing</h3>
+                <p>We are committed to providing a fully accessible dining experience for all guests. If you have any questions or need assistance, please contact us.</p>
+            </div>
+            <div class="footer-item">
+                <h3>Follow us on</h3>
+                <ul>
+                    <li><a href="https://www.instagram.com/">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/">Facebook</a></li>
+                    <li><a href="https://twitter.com/home">Twitter</a></li>
+                    <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="footer-item">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/aboutus">About us</a></li>
+                    <li><a href="/contactus">Contact us</a></li>
+                    <li><a href="/menu">Delivery</a></li>
+                    <li><a href="/reservation">Reservation</a></li>
+                    <li><a href="/login">Log in</a></li>
+                    <li><a href="/signup">Sign up</a></li>
+                </ul>
+            </div>
+        </div>
+        <p id="copy-right">© 2024 SpicyZing. All rights reserved.</p>
+    </div>
+
+
+    <template id="items-template">
+        <div class="items">
+            <img src="">
+            <div class="separator">
+                <div class="item-info">
+                    <h3></h3>
+                    <p></p>
+                </div>
+                <div class="control-item-count">
+                    <button class="minus hide-element" onclick="decreaseQuantity(this)">-</button>
+                    <p class="hide-element item-quan">1</p>
+                    <button class="plus hide-element" id="never-hidden" onclick="increaseQuantity(this)">+</button>
+                    <p class="hide-element item-id" id="always-hidden"></p>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="cart-template">
+        <div class="cart-items">
+            <img src="" width="175" id="cart-img">
+            <div class="different-line">
+                <p id="cart-name"></p>
+                <div class="control-item-count">
+                    <button class="minus" onclick="cartDecreaseQuantity(this)">-</button>
+                    <p class="" id="cart-quantity"></p>
+                    <button class="plus" id="never-hidden" onclick="cartIncreaseQuantity(this)">+</button>
+                    <p class="item-id" id="always-hidden"></p>
+                </div>
+                <p id="cart-price"></p>
+            </div>
+        </div>
+    </template>
+
+    <script src="script/menuController.js"></script>
+    <script src="script/cartController.js"></script>
+    <script src="script/search.js"></script>
+    <script src="script/filter.js"></script>
+</body>
+</html>

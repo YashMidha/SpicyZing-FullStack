@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpicyZing</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/headerStyle.css">
+    <link rel="stylesheet" href="../style/footerStyle.css">
+    <link rel="stylesheet" href="../style/reservationStyle.css">
+</head>
+<body>
+    <div class="header">
+        <a href="/">
+            <img src="assets/logo.png" width="200" id="logo">
+        </a>
+        <div class="navbar">
+            <a href="/">Home</a>
+            <a href="/aboutus">About us</a>
+            <a href="/contactus">Contact us</a>
+            <a href="/menu">Delivery</a>
+            <a href="/reservation" id="active-page">Reservation</a>
+        </div>
+        <div class="sign-up-options">
+            <% if (!isAuthenticated){ %>
+                <a class="login-button" href="/login">Log in</a>
+            <% } %>
+            <% if (isAuthenticated && user) { %>
+                <a href="/profile">
+                    <div class="user-circle">
+                        <%= user.name.charAt(0).toUpperCase() %>
+                    </div>
+                </a>
+            <% } else { %>
+                <div class="signup-button">
+                    <a href="/signup">Sign up</a>
+                </div>
+            <% } %>            
+        </div>
+    </div>
+
+    <div class="holder">
+        <div class="res-form" id="top-margin-high">
+            <h2>Reservation</h2>
+            <input type="text" placeholder="Enter Name" id="res-name">
+            <input type="text" placeholder="Enter Phone Number" id="res-phone">
+            <input type="date" id="res-date" min="2024-01-01" max="2025-12-31">
+            <input type="time" id="res-time">
+            <input type="number" placeholder="Number of People" id="res-number">
+            <div class="red-incorrect">
+                <!-- Handled by JS -->
+                <img src="../assets/incorrect.png" width="20">
+                <p id="incorrect-field"></p>
+            </div>
+            <div onclick="validate()" class="button-to-res">Reserve</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-items">
+            <div class="footer-item">
+                <h3>SpicyZing</h3>
+                <p>We are committed to providing a fully accessible dining experience for all guests. If you have any questions or need assistance, please contact us.</p>
+            </div>
+            <div class="footer-item">
+                <h3>Follow us on</h3>
+                <ul>
+                    <li><a href="https://www.instagram.com/">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/">Facebook</a></li>
+                    <li><a href="https://twitter.com/home">Twitter</a></li>
+                    <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="footer-item">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/aboutus">About us</a></li>
+                    <li><a href="/contactus">Contact us</a></li>
+                    <li><a href="/menu">Delivery</a></li>
+                    <li><a href="/reservation">Reservation</a></li>
+                    <li><a href="/login">Log in</a></li>
+                    <li><a href="/signup">Sign up</a></li>
+                </ul>
+            </div>
+        </div>
+        <p id="copy-right">© 2024 SpicyZing. All rights reserved.</p>
+    </div>
+
+    <script src="script/reservation.js"></script>
+
+</body>
+</html>

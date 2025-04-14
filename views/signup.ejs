@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpicyZing</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/headerStyle.css">
+    <link rel="stylesheet" href="../style/signupStyle.css">
+    <link rel="stylesheet" href="../style/footerStyle.css">
+</head>
+<body>
+    <div class="header">
+        <a href="/">
+            <img src="assets/logo.png" width="200" id="logo">
+        </a>
+        <div class="navbar">
+            <a href="/">Home</a>
+            <a href="/aboutus">About us</a>
+            <a href="/contactus">Contact us</a>
+            <a href="/menu">Delivery</a>
+            <a href="/reservation">Reservation</a>
+        </div>
+        <div class="sign-up-options">
+            <div class="login-button">
+                <a href="/login">Log in</a>
+            </div>
+            <div class="signup-button" id="active-sign-button">
+                <a href="/signup">Sign up</a>
+            </div>
+        </div>
+    </div>
+
+    <form action="/signup" method="POST" onsubmit="return validate()" class="holder">
+        <div class="login-form" id="top-margin-high">
+            <h2>Sign up to SpicyZing</h2>
+            <input type="text" placeholder="Enter Full Name" id="signup-name" name="name">
+            
+            <input type="email" placeholder="Enter Email" id="signup-email" name="email">
+            
+            <input type="password" placeholder="Enter Password" id="signup-password" name="password">
+        
+            <label id="date-label">Date of Birth</label>
+            <input type="date" id="signup-dob" min="1990-01-01" max="2024-12-31" name="dob">
+            
+            <div class="same-line" id="radio-same-line">
+                <div class="space-between">
+                    <input type="radio" class="radio-input" name="gender" value="male" id="male">
+                    <label for="male">Male</label>
+                    </div>
+                <div class="space-between">
+                    <input type="radio" class="radio-input" name="gender" value="female" id="female">
+                    <label for="female">Female</label>
+                </div>
+            </div>
+
+            <input type="text" placeholder="Enter Phone Number" id="signup-phone" name="phone">
+            
+            <div class="same-line" id="check-same-line">
+                <input type="checkbox" class="check-input" id="signup-terms">
+                <label for="signup-terms">Agree to Terms and Conditions</label>
+            </div>
+
+            <div class="red-incorrect">
+                <!-- Handled by JS -->
+                <img src="../assets/incorrect.png" width="20">
+                <p id="incorrect-field"></p>
+            </div>
+            
+            <button type="submit" class="button-to-signup">Sign up</button>
+            <a href="/login" class="link-to-login">Already Have an account?</a>
+        </div>
+    </form>
+
+    <div class="footer">
+        <div class="footer-items">
+            <div class="footer-item">
+                <h3>SpicyZing</h3>
+                <p>We are committed to providing a fully accessible dining experience for all guests. If you have any questions or need assistance, please contact us.</p>
+            </div>
+            <div class="footer-item">
+                <h3>Follow us on</h3>
+                <ul>
+                    <li><a href="https://www.instagram.com/">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/">Facebook</a></li>
+                    <li><a href="https://twitter.com/home">Twitter</a></li>
+                    <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="footer-item">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/aboutus">About us</a></li>
+                    <li><a href="/contactus">Contact us</a></li>
+                    <li><a href="/menu">Delivery</a></li>
+                    <li><a href="/reservation">Reservation</a></li>
+                    <li><a href="/login">Log in</a></li>
+                    <li><a href="/signup">Sign up</a></li>
+                </ul>
+            </div>
+        </div>
+        <p id="copy-right">© 2024 SpicyZing. All rights reserved.</p>
+    </div>
+
+    <script src="script/signup.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+.information{
+    margin: 50px;
+    margin-top: 180px;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.items{
+    margin: 40px 10px; 
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    align-items: left;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px #0000006c;
+    background-color: white;
+}
+
+.items img{
+    width: 100%;
+    border-radius: 15px 15px 0px 0px;
+    margin: 0px;
+}
+
+.items h3, .items p{
+    margin: 10px;
+    margin-left: 20px;
+}
+
+
+.separator{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.control-item-count{
+    display: flex;
+    align-items: center;
+    margin: 3px;
+    margin-right: 20px;
+}
+
+.control-item-count p{
+    margin: 3px;
+}
+
+.control-item-count button{
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    background-color: white;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.plus{
+    color: green
+}
+
+.minus{
+    color: rgb(106, 106, 106);
+}
+
+#no-searches-matching{
+    margin: 50px;
+    margin-top: 50px;
+    font-style: italic;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: red;
+}
+
+#top-margin-some{
+    margin-top: 50px;
+}
+
+.filters{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.filter{
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid black;
+    padding: 5px;
+    font-size: 18px;
+    border-radius: 10px;
+    width: 220px;
+    justify-content: space-around;
+}
+
+.filter:hover{
+    cursor: pointer;
+}
+
+.filter img, .filter p{
+    margin: 0px 10px;
+}
+
+.tick{
+    visibility: hidden;
+}
+
+.id-invisible{
+    display: none;
+}
